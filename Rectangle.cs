@@ -26,21 +26,10 @@ namespace Lab2
             Thread.Sleep(20);
             rectangle.point4 = Generate.initPoint2D();
             Thread.Sleep(20);
-            rectangle.point2 = Generate.initPoint2D(); //это сделано потому, что иначе вылезает исключение:
-            Thread.Sleep(20);                          //"Ссылка на объект не указывает на экземпляр объекта".
-            rectangle.point3 = Generate.initPoint2D(); //Поэтому я использовал этот способ, чтоб сначала инициализировать
-                                                       //поле, а потом подставить значения.
-    /*
-            Random r = new Random();
-
-            rectangle.point1 = new Point2D();
-            rectangle.point1.setX(r.Next(10, 100));
-            rectangle.point1.setY(r.Next(10, 100));
-
-            rectangle.point2 = new Point2D(rectangle.point1);
-            rectangle.point2.shiftX(r.Next(1, 10));
-
-    //*/
+            rectangle.point2 = Generate.initPoint2D(); 
+            Thread.Sleep(20);                          
+            rectangle.point3 = Generate.initPoint2D();
+ 
 
             rectangle.point2.setX(rectangle.point4.getX());
             rectangle.point2.setY(rectangle.point1.getY());
