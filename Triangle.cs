@@ -66,28 +66,29 @@ namespace Lab2
 
         public void shiftX(double value)
         {
-            point1.setX(point1.getX() + value);
-            point2.setX(point2.getX() + value);
-            point3.setX(point3.getX() + value);
+            point1.shiftX(value);
+            point2.shiftX(value); 
+            point3.shiftX(value);
 
-            if ((point1.getX() < 0 || point1.getX() > 500) || (point2.getX() < 0 || point2.getX() > 500) || (point3.getX() < 0 || point3.getX() > 500)) { 
-                point1.setX(point1.getX() - value);
-                point2.setX(point2.getX() - value);
-                point3.setX(point3.getX() - value);
+            if ((point1.getX() < 0 || point1.getX() > 500) || (point2.getX() < 0 || point2.getX() > 500) || (point3.getX() < 0 || point3.getX() > 500))
+            {
+                point1.shiftX(-value);
+                point2.shiftX(-value);
+                point3.shiftX(-value);
             }
         }
 
         public void shiftY(double value)
         {
-            point1.setY(point1.getY() + value);
-            point2.setY(point2.getY() + value);
-            point3.setY(point3.getY() + value);
+            point1.shiftY(value);
+            point2.shiftY(value);
+            point3.shiftY(value);
 
             if ((point1.getY() < 0 || point1.getY() > 300) || (point2.getY() < 0 || point2.getY() > 300) || (point3.getY() < 0 || point3.getY() > 300))
             {
-                point1.setY(point1.getY() - value);
-                point2.setY(point2.getY() - value);
-                point3.setY(point3.getY() - value);
+                point1.shiftY(-value);
+                point2.shiftY(-value);
+                point3.shiftY(-value);
             }
         }
     }

@@ -30,7 +30,17 @@ namespace Lab2
             Thread.Sleep(20);                          //"Ссылка на объект не указывает на экземпляр объекта".
             rectangle.point3 = Generate.initPoint2D(); //Поэтому я использовал этот способ, чтоб сначала инициализировать
                                                        //поле, а потом подставить значения.
+    /*
+            Random r = new Random();
 
+            rectangle.point1 = new Point2D();
+            rectangle.point1.setX(r.Next(10, 100));
+            rectangle.point1.setY(r.Next(10, 100));
+
+            rectangle.point2 = new Point2D(rectangle.point1);
+            rectangle.point2.shiftX(r.Next(1, 10));
+
+    //*/
 
             rectangle.point2.setX(rectangle.point4.getX());
             rectangle.point2.setY(rectangle.point1.getY());
@@ -52,17 +62,7 @@ namespace Lab2
             rectangle.point2 = Generate.initPoint2D(); 
             Thread.Sleep(20);                          
             rectangle.point3 = Generate.initPoint2D();
-
-            /*rectangle.point1 = Generate.initPoint2D();
-             Thread.Sleep(20);
-             rectangle.point2.setY(rectangle.point1.getY());
-             rectangle.point2.setX(rectangle.point1.getX() + width);
-
-             rectangle.point3.setX(rectangle.point1.getX());
-             rectangle.point3.setY(rectangle.point1.getY() + height);
-
-             rectangle.point4.setY(rectangle.point3.getY());
-             rectangle.point4.setX(rectangle.point2.getX());*/
+                        
             rectangle.point1.setX(0);
             rectangle.point1.setY(0);
 
@@ -102,7 +102,7 @@ namespace Lab2
             double first = point1.getDistance(point2);
             double second = point1.getDistance(point3);
 
-            return first * second;
+            return (first * second);
         }
 
         public double getPerimeter()
@@ -110,39 +110,40 @@ namespace Lab2
             double first = point1.getDistance(point2);
             double second = point1.getDistance(point3);
 
-            return (first + second) * 2;
+            return ((first + second) * 2);
         }
 
         public void shiftX(double value)
         {
-            point1.setX(point1.getX() + value);
-            point2.setX(point2.getX() + value);
-            point3.setX(point3.getX() + value);
-            point4.setX(point4.getX() + value);
+            point1.shiftX(value);
+            point2.shiftX(value);
+            point3.shiftX(value);
+            point4.shiftX(value);
 
             if ((point1.getX() < 0 || point1.getX() > 500) || (point2.getX() < 0 || point2.getX() > 500) || (point3.getX() < 0 || point3.getX() > 500) || (point4.getX() < 0 || point4.getX() > 500))
             {
-                point1.setX(point1.getX() - value);
-                point2.setX(point2.getX() - value);
-                point3.setX(point3.getX() - value);
-                point4.setX(point4.getX() - value);
+                point1.shiftX(-value);
+                point2.shiftX(-value);
+                point3.shiftX(-value);
+                point4.shiftX(-value);
             }
         }
 
         public void shiftY(double value)
         {
-            point1.setY(point1.getY() + value);
-            point2.setY(point2.getY() + value);
-            point3.setY(point3.getY() + value);
-            point4.setY(point4.getY() + value);
-            
+            point1.shiftY(value);
+            point2.shiftY(value);
+            point3.shiftY(value);
+            point4.shiftY(value);
+
             if ((point1.getY() < 0 || point1.getY() > 300) || (point2.getY() < 0 || point2.getY() > 300) || (point3.getY() < 0 || point3.getY() > 300) || (point4.getY() < 0 || point4.getY() > 300))
             {
-                point1.setY(point1.getY() - value);
-                point2.setY(point2.getY() - value);
-                point3.setY(point3.getY() - value);
-                point4.setY(point4.getY() - value);
+                point1.shiftY(-value);
+                point2.shiftY(-value);
+                point3.shiftY(-value);
+                point4.shiftY(-value);
             }
+
         }
     }
 }

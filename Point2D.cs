@@ -8,7 +8,9 @@ using static System.Math;
 namespace Lab2
 {
     public class Point2D
-    {
+    { 
+        static Random random = new Random();
+
         private double x;
 
         private double y;
@@ -17,7 +19,7 @@ namespace Lab2
         {
             Point2D point = new Point2D();
 
-            Random random = new Random();
+
             const int widthMAX = 500;
             const int heightMAX = 300;
 
@@ -50,22 +52,16 @@ namespace Lab2
         public void shiftX(double value)
         {
             x += value;
-
-            if (x < 0 || x > 500)
-                x -= value;
         }
 
         public void shiftY(double value)
         {
             y += value;
-
-            if (y < 0 || y > 300)
-                y -= value;
         }
 
         public double getDistance(Point2D OtherPoint)
         {
-            double distance = Sqrt(Pow((x - OtherPoint.getX()), 2) + (y - OtherPoint.getY()));
+            double distance = Sqrt(Pow((x - OtherPoint.getX()), 2) + Pow((y - OtherPoint.getY()), 2));
 
             return distance;
         }
